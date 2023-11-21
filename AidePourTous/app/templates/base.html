@@ -1,0 +1,29 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Aide Pour Tous{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{% block header_title %}Aide Pour Tous{% endblock %}</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'menu1' %}">Menu 1</a></li>
+                <li><a href="{% url 'menu2' %}">Menu 2</a></li>
+                <!-- Add more menu items as needed -->
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <!-- Add your JavaScript scripts here -->
+</body>
+</html>
