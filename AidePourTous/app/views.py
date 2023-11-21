@@ -4,23 +4,25 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 
-@login_required
+
 def home(request):
     return render(request, 'home.html')
 
 @login_required
-def category_view(request, category):
-    # Add logic to fetch and display content based on the category
-    return render(request, 'category.html', {'category': category})
+def finance_view(request):
+    return render(request, 'category/finance.html')
 
-def index(request):
-    return HttpResponse("You're at the index page.")
+@login_required
+def housing_view(request):
+    return render(request, 'category/housing.html')
 
-def menu1(request):
-    return HttpResponse("You're at the menu1 page.")
+@login_required
+def food_view(request):
+    return render(request, 'category/food.html')
 
-def menu2(request):
-    return HttpResponse("You're at the menu2 page.")
+@login_required
+def work_training_view(request):
+    return render(request, 'category/work_training.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -39,7 +41,14 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')  # Redirect to the home page after successful registration
+            return redirect('chatBot')  # Redirect to the home page after successful registration
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')  # Redirect to the home page after logout
+
+def chatBot(request):
+    return render(request, 'chatBot.html')

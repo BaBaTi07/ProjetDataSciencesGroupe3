@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% load bootstrap3 %}
 
 {% block title %}Login - AidePourTous{% endblock %}
 
 {% block content %}
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <button type="submit">Login</button>
-    </form>
+    <div class="register-container">
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
 {% endblock %}

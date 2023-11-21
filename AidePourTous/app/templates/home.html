@@ -14,12 +14,14 @@
             <!-- Display content for logged-in users -->
             <h2>Welcome, {{ user.username }}!</h2>
             <p>Choose a category:</p>
-            <ul>
-                <li><a href="{% url 'category' category='finance' %}">Finance</a></li>
-                <li><a href="{% url 'category' category='housing' %}">Housing</a></li>
-                <li><a href="{% url 'category' category='food' %}">Food</a></li>
-                <li><a href="{% url 'category' category='work_training' %}">Work/Training</a></li>
-            </ul>
+            <div class="category-links">
+                <ul>
+                    <li><a href="{% url 'finance' %}" class="category-link">Finance</a></li>
+                    <li><a href="{% url 'housing' %}" class="category-link">Housing</a></li>
+                    <li><a href="{% url 'food' %}" class="category-link">Food</a></li>
+                    <li><a href="{% url 'work_training' %}"class="category-link">Work/Training</a></li>
+                </ul>
+            </div>
         {% else %}
         <div id="home-buttons">
             <a href="{% url 'register' %}" class="button">Register</a>
