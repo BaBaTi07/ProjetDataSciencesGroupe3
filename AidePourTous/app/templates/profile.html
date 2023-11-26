@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}AidePourTous{% endblock %}
+
+{% block header_title %}Bienvenue sur Aide Pour Tous !{% endblock %}
+
+{% block content %}
+<div class="profile-section">
+    <h1>Mon Profil</h1>
+    <div class="profile-info">
+    <p>Username: {{ user_info.username }}</p>
+    <p><a href="{% url 'logout' %}">Se déconecter</a>.</p>
+    </div>
+</div>
+{% endblock %}

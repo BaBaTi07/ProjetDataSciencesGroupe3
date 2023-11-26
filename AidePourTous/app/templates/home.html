@@ -9,24 +9,26 @@
 {% block content %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <div id = "HomeImage">
-        {% if user.is_authenticated %}
-            <!-- Display content for logged-in users -->
-            <h2>Welcome, {{ user.username }}!</h2>
-            <p>Choose a category:</p>
-            <div class="category-links">
-                <ul>
-                    <li><a href="{% url 'finance' %}" class="category-link">Finance</a></li>
-                    <li><a href="{% url 'housing' %}" class="category-link">Housing</a></li>
-                    <li><a href="{% url 'food' %}" class="category-link">Food</a></li>
-                    <li><a href="{% url 'work_training' %}"class="category-link">Work/Training</a></li>
-                </ul>
+        <div class="text-section">
+            <h1>Aide Pour Tous</h1>
+            <p>Bienvenue sur AidePourTous, votre plateforme d'assistance en ligne. 
+                Nous sommes là pour vous aider dans toutes vos préoccupations.</p>
             </div>
-        {% else %}
-        <div id="home-buttons">
-            <a href="{% url 'register' %}" class="button">Register</a>
-            <a href="{% url 'login' %}" class="button">Login</a>
+            <div class="login-section">
+            <div class="login-content">
+                {% if user.is_authenticated %}
+                    <p>Bonjour! Vous êtes connecté(e) sur AidePourTous sous le pseudo : {{ user.username }}.</p>
+                    <p>Afin de vous aider, vous pouvez communiquer avec notre ChatBot :</p>
+                    <a href="{% url 'chatBot' %}" class="start-link">
+                        <button class="start-button">Commencer</button>
+                        </a>.
+                        <a href="{% url 'logout' %}">Se déconnecter</a>.
+                    {% else %}
+                        <p>Afin de vous aider, vous pouvez communiquer avec notre ChatBot :</p>
+                        <a href="{% url 'register' %}" class="start-link">
+                        <button class="start-button">Commencer</button>
+                        </a> 
+                    {% endif %}
+            </div>   
         </div>
-        {% endif %}
-    </div>
 {% endblock %}

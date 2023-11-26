@@ -6,13 +6,16 @@
 {% block title %}Register - AidePourTous{% endblock %}
 
 {% block content %}
+<div class="login-section">
     <div class="register-container">
-        <h2>Register</h2>
-        <form method="post" class="register-form">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            <button type="submit" class="btn btn-primary">Register</button>
-            <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
-        </form>
+        <div class="register-section">
+            <form method="post" class="register-form">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <p>Vous avez déjà un compte? <a href="{% url 'login' %}">Connectez-vous ici</a>.</p>
+        </div>
     </div>
+</div>
 {% endblock %}

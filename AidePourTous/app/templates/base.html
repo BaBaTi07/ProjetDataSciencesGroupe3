@@ -11,20 +11,31 @@
 </head>
 <body>
     <header>
-        <h1>{% block header_title %}Aide Pour Tous{% endblock %}</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'register' %}">Register</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-                <!-- Add more menu items as needed -->
-            </ul>
+        <nav class="navbar">
+            <div class="left-section">
+                <div class="logo">AidePourTous</div>
+            </div>
+            <div class="center-section"></div>
+            
+                <a href="{% url 'home' %}">Accueil</a>
+                <a href="{% url 'advise' %}">Conseil</a>
+            </div>
+            <div class="right-section">
+                <a href="{% url 'profile' %}">Mon profil</a>
+            </div>
         </nav>
     </header>
-    <div id="content">
-        {% block content %}{% endblock %}
+    <div class="content">
+        <div class="background-image">
+            <div class="overlay">
+                <div class="main-section">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Add your JavaScript scripts here -->
+    <footer>
+        <p>Réalisé par Florence Brieven, Manon Charlier, Baptiste Moncomble et Christophe Roland | Tous les droits sont réservés.</p>
+    </footer>
 </body>
 </html>

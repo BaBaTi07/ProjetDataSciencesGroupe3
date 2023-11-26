@@ -6,5 +6,18 @@
 {% block title %}ChatBot - AidePourTous{% endblock %}
 
 {% block content %}
-<h2>ChatBot</h2>
+    <div class="transparent-container">
+        <div class="orange-container">
+            <h3>ChatBot</h3>
+            <div id="chat-container">
+                <div id="chat-messages">
+                    <div class="message-bubble">Bonjour! Comment puis-je vous aider aujourd'hui?</div>
+                </div>
+                <div id="user-input">
+                    <input type="text" id="message-input" placeholder="Tapez votre message...">
+                    <button id="send-button">Envoyer</button>
+                </div>
+            </div>
+        </div>    
+    </div>
 {% endblock %}

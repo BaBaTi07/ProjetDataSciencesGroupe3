@@ -1,11 +1,36 @@
 {% extends 'base.html' %}
 
-{% load static %}
-
 {% block title %}AidePourTous{% endblock %}
 
 {% block header_title %}Bienvenue sur Aide Pour Tous !{% endblock %}
 
 {% block content %}
-<h2> Housing </h2>
+<div class="map-container">
+    <div id="map" style="height: 300px; width: 800px;"></div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0ya5_ACX8lR8m6NYfQ6veumhPsfgChKY&callback=initMap"></script>
+
+    <script>
+        var housingData = {{ housing_data|safe }};
+
+        function initMap() {
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 50.5, lng: 4.8 }, // Set initial map center
+                zoom: 9, // Set initial zoom level
+            });
+            
+            // Add points of interest (markers)
+            for (var i = 0; i < housingData.length; i++) {
+                var point = housingData[i];
+                console.log(point);
+                var marker = new google.maps.Marker({
+                    position: { lat: parseFloat(point.latitude), lng: parseFloat(point.longitude) },
+                    map: map,
+                    title: point.nom_de_l_etablissement,
+                });
+            }
+        }
+    </script>
+</div>
 {% endblock %}

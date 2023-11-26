@@ -1,115 +1,308 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-header {
-    background-color: #1fd01f; /* Green banner */
-    color: #ffffff; /* White text */
-    padding: 10px;
-    text-align: center;
-}
-nav ul {
-    list-style-type: none;
+    font-family: "Segoe UI", sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    background-color: #008000; /* Slightly greener button color */
-}
-nav ul li {
-    margin: 0;
-    padding: 10px;
-}
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-}
-#content {
-    padding: 20px;
-}
-h2 {
-    color: #008000; /* Slightly greener color for the featured content heading */
-}
-#HomeImage {
-    background-image: url('/static/homelogo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    height: 500px;
-}
-#home-buttons {
-    text-align: center;
-    margin-top: 20px;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.button {
-    display: inline-block;
+.navbar {
+    background-color: #fd690d;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    margin: 0 10px;
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #008000; /* Button color */
-    border-radius: 5px;
 }
 
-.button:hover {
-    background-color: #006600; /* Button color on hover */
+.left-section,
+.right-section {
+    display: flex;
+    align-items: center;
 }
-.register-container {
-    max-width: 400px;
-    margin: auto;
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.center-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-section a {
+    margin: 0 10px; /* Ajustez la marge entre les liens selon vos préférences */
+}
+
+.navbar a {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: #fd690d;
+}
+
+.content {
+    flex: 1;
+    position: relative;
+}
+
+.background-image {
+    background: url('../img/AidePourTous.jpg') center center/cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ajuster pour centrer verticalement */
+    text-align: left;
+    margin: 0;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.text-section {
+    color: white;
+    max-width: 600px;
+}
+
+.text-section h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.text-section p {
+    font-size: 24px;
+}
+
+.login-section {
+    text-align: right;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(253, 105, 13, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    color: white;
+    opacity: 0.9;
+}
+
+.start-button {
+    background-color: #fd690d;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    opacity: 1;
+    margin-top: 10px; /* Ajouter une marge en haut si nécessaire */
+}
+
+.start-button:hover {
+    background-color: #fd690d;
+}
+
+.start-link {
+    text-decoration: none; /* Supprimer la décoration du lien */
+    color: white;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-section {
+    background-color: rgba(253, 105, 13, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    max-width: 600px;
+    width: 100%;
 }
 
 .register-form {
-    display: flex;
-    flex-direction: column;
+    margin-top: 20px;
 }
 
-.btn {
-    background-color: #008000;
-    color: #fff;
+.register-form button {
+    margin-top: 10px;
+}
+
+.register-form p {
+    margin-top: 10px;
+}
+
+
+.advise-section {
+    text-align: center;
+}
+
+.transparent-container {
+    background-color: rgba(253, 105, 13, 0.7);
+    padding: 60px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    max-width: 90%; /* Ajustez la largeur maximale selon vos préférences */
+    margin: 20px auto; /* Ajustez la marge selon vos préférences */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.advise-item {
+    text-align: center;
+    margin: 20px;
+    flex: 1;
+    max-width: 400px
+}
+
+.orange-container {
+    background-color: #fd690d; /* Couleur orange */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    overflow: hidden; /* Pour cacher le débordement de l'image si elle est plus grande */
+}
+
+.orange-container img {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.orange-container h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.map-container {
+    background-color: rgba(253, 105, 13, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    width: 1000px;
+    height: 400Px;
+    margin: 10px auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.advise-item h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Ajoutez ou ajustez les styles nécessaires pour la page profile ici */
+.profile-section {
+    background-color: rgba(253, 105, 13, 0.7);
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    max-width: 90%; /* Ajustez la largeur maximale selon vos préférences */
+    margin: 20px auto; /* Ajustez la marge selon vos préférences */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-info p {
+    font-size: 18px;
+}
+
+#chat-container {
+    background-color: #fd690d; /* ou utilisez la couleur que vous préférez */
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px; /* Ajustez la largeur selon vos préférences */
+    width: 100%;
+}
+
+#chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.message-bubble {
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
     padding: 10px;
+    margin-bottom: 10px;
+    max-width: 80%; /* Ajustez la largeur maximale selon vos préférences */
+}
+
+#user-input {
+    margin-top: 18px;
+}
+
+#message-input {
+    width: 70%;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#send-button {
+    background-color: white;
+    color: #fd690d;
+    padding: 8px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #006400;
+footer {
+    background-color: rgba(253, 105, 13, 0.7);
+    text-align: center;
+    padding: 10px 20px;
+    color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
-
-.category-links {
-    display: flex;
-    align-items: center;
-}
-
-.category-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.category-links li {
-    margin-right: 10px;
-}
-
-.category-link {
-    display: inline-block;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: #008000; /* Green color */
-    color: #fff;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.category-link:hover {
-    background-color: #006400; /* Darker green on hover */
-}

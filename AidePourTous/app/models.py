@@ -1,16 +1,10 @@
+
 from django.db import models
 
-# Create your data models here.
-
-#these two are examples
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField("date published")
-
-
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-
-# end of examples 
+class Etablissement(models.Model):
+    spw_id = models.CharField(max_length=255)
+    type_etablissement = models.CharField(max_length=255)
+    implementation = models.CharField(max_length=255)
+    nom_etablissement = models.CharField(max_length=255)
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
