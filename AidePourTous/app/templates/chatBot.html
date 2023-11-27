@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% load bootstrap3 %}
 
 {% block title %}ChatBot - AidePourTous{% endblock %}
 
@@ -12,11 +11,23 @@
             <div id="chat-container">
                 <div id="chat-messages">
                     <div class="message-bubble">Bonjour! Comment puis-je vous aider aujourd'hui?</div>
+                    {% for message in messages %}
+                        <div class="message-bubble">
+                            {{ message.text }}
+                        </div>
+                        {% endfor %}
                 </div>
                 <div id="user-input">
-                    <input type="text" id="message-input" placeholder="Tapez votre message...">
-                    <button id="send-button">Envoyer</button>
+                    <form method="post" action="{% url 'chatBot' %}">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button type="submit">Envoyer</button>
+                    </form>
                 </div>
+                <form method="post" action="{% url 'clear_messages' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Effacer l'historique</button>
+                </form>
             </div>
         </div>    
     </div>

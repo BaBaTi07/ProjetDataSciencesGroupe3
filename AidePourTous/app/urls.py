@@ -16,4 +16,6 @@ urlpatterns = [
     path('work_training/', views.work_training_view, name='work_training'),
     path('chatBot/', views.chatBot, name='chatBot'),
     path('profile/', views.profile_view, name='profile'),
+    path('clear-messages/', views.clear_messages, name='clear_messages'),
+    path('reponse/<str:message>/', views.reponse, name='reponse'),
 ]
